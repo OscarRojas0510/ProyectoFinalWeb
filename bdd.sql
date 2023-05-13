@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2023 a las 04:39:24
+-- Tiempo de generación: 13-05-2023 a las 04:29:38
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -69,6 +69,19 @@ CREATE TABLE `entidad_federativa` (
   `nombre_entidad` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `entidad_federativa`
+--
+
+INSERT INTO `entidad_federativa` (`id_entidad`, `nombre_entidad`) VALUES
+(1, 'Guerrero'),
+(2, 'San Luis Potosí'),
+(3, 'Chihuahua'),
+(4, 'Nayarit'),
+(5, 'Chiapas'),
+(6, 'Oaxaca'),
+(7, 'Querétaro');
+
 -- --------------------------------------------------------
 
 --
@@ -78,11 +91,36 @@ CREATE TABLE `entidad_federativa` (
 CREATE TABLE `producto` (
   `id_producto` int(5) NOT NULL,
   `nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `descripcion` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `descripcion` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `id_entidad_federativa` int(5) NOT NULL,
   `precio` int(5) NOT NULL,
   `existencia` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id_producto`, `nombre`, `descripcion`, `id_entidad_federativa`, `precio`, `existencia`) VALUES
+(1, 'Muñeca de Tusa', 'Colorida muñeca elaborada de las hojas de las mazorcas de maíz, y teñida a base de tintes naturales.', 1, 540, 100),
+(2, 'Muñeca Artesanal Zompeltepec', 'Muñeca de trapo realizada por artesanas Guerrerenses con movilidad en manos y pies.', 1, 600, 100),
+(3, 'Muñeca Artesanal Mixteca', 'Muñeca fabricada en telar o telas de algodón.', 1, 500, 100),
+(4, 'Muñeca Pame', 'Muñeca elaborada con palma y sus cabellos están hechos de pelos de elote.', 2, 250, 80),
+(5, 'Muñeca Huasteca', 'Muñeca elaborada con tela, parecida a una jerga delgada, la cual puede variar en tonalidades.', 2, 300, 75),
+(6, 'Muñeca Frida Kahlo', 'Muñeca elaborada de Tela y Estambre.', 2, 300, 60),
+(7, 'Muñeca María', '', 3, 420, 80),
+(8, 'Muñeca Tarahumara', 'Elaborada con madera tallada y vestidas con el traje típico de los Rarámuri.', 3, 450, 60),
+(9, 'Muñeca Lupita', 'Muñeca elaborada a base de papel maché hecho masa, engrudo y pintadas a mano con pintura vinílica.', 4, 400, 55),
+(10, 'Muñeca Huichol', 'Muñeca elaborada de plástico que posee la vestimenta colorida típica Huichol.', 4, 500, 50),
+(11, 'Muñeca Chiapaneca', 'Muñeca elaborada con tela rellena de algodón con detalles en las costuras.', 5, 360, 70),
+(12, 'Muñeca Tzotzil', 'Muñeca elaborada de tela modelada en arcilla, tallado en madera o cartón, o con alma de alambre.', 5, 450, 60),
+(13, 'Muñeca Tzotzil', 'Muñeca elaborada de lana, algodón recortado y cosido a mano.', 5, 400, 50),
+(14, 'Muñeca Comadre', 'Muñeca de trapo hecha artesanalmente, llenas de corazón, raíces y cultura del pueblo Mixe.', 6, 440, 70),
+(15, 'Muñeca Quialanita', 'Muñeca de tela que posee la vestimenta tradicional Quialanense.', 6, 400, 80),
+(16, 'Muñeca Malacatera', 'Muñeca de tela que vestimenta y el colorido de cada etnia.', 6, 370, 60),
+(17, 'Muñeca  Dönxu', 'Muñeca elaborada artesanalmente que rinde homenaje a la mujer indígena.', 7, 420, 90),
+(18, 'Muñeca Lupita ', 'Muñeca elaborada a mano que porta el traje típico emulando vestuario con el que se baila huapango.', 7, 450, 80),
+(19, 'Muñeca Lele', 'Muñeca de tela que porta largas trenzas, con coronas y lazos de colores, así como su vestido tradicional.', 7, 450, 70);
 
 -- --------------------------------------------------------
 
@@ -94,6 +132,16 @@ CREATE TABLE `tipo_pago` (
   `id_tipo_pago` int(5) NOT NULL,
   `nombre_metodo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tipo_pago`
+--
+
+INSERT INTO `tipo_pago` (`id_tipo_pago`, `nombre_metodo`) VALUES
+(1, 'Efectivo'),
+(2, 'Tarjeta Débito'),
+(3, 'Tarjeta Crédito'),
+(4, 'Efectivo en puntos de pago');
 
 -- --------------------------------------------------------
 
