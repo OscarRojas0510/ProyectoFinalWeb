@@ -34,7 +34,7 @@ $productos = $db->query("SELECT * FROM producto WHERE id_producto =".$articulo);
                 <div class="col-lg-7 col-md-7 col-sm-6">
                     <h4 class="box-title mt-5">Descripción</h4>
                     <p><?php echo $descripcion ?></p>
-                    <p>Disponibles: <?php echo $existencia ?></p>
+                    <h5>Disponibles: <?php echo $existencia ?> pzs</h5>
                     <h2 class="mt-5">
                         $<?php echo $precio ?>
                     </h2>
