@@ -1,0 +1,58 @@
+html,
+body {
+    margin: 0%;
+    padding: 0%;
+    background-color: #E8BBA8;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+}
+
+.title {
+    text-align: center;
+    font-size: 60px;
+    color: white;
+    margin-top: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: auto;
+    max-width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container .card {
+    width: 500px;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 0 5px purple;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    float: left;
+}
+
+.container .card:hover {
+    transform: translate(-15px);
+    box-shadow: 0 12px 16px gray;
+
+}
+
+.container .card img {
+    width: auto;
+    height: 220px;
+}
+
+.container .card h4 {
+    font-weight: 600;
+}
