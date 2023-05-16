@@ -19,7 +19,7 @@
         while ($row = $resultado->fetch_assoc()) {
         ?>
             <div class="card">
-                <div style="align-items: center;"><img src="data:image/jpg;base64, <?php echo base64_encode($row['imagen']); ?>"></div>
+                <div style="align-items: center;"><img src="resources/img/<?php echo $row['imagen']; ?>"></div>
                 <h4><?php echo $row['nombre']; ?></h4>
                 <p><?php echo $row['descripcion']; ?></p>
                 <p>$<?php echo $row['precio']; ?>.00</p>
