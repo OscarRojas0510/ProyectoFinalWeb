@@ -38,8 +38,39 @@
   height: 45vh;
   border-radius: 15px;
 }
+.munieca:hover {
+  cursor: pointer;
+  animation-name: iconAnimIn;
+  animation-duration: calc(1s * 0.5);
+  animation-fill-mode: forwards;
+}
+.munieca:not(:hover) {
+  cursor: pointer;
+  animation-name: iconAnimOut;
+  animation-duration: calc(1s * 0.5);
+  animation-fill-mode: forwards;
+}
 .imagenMunieca {
   width: 100%;
   height: 60%;
   background-color: white;
+}
+@keyframes iconAnimIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+@keyframes iconAnimOut {
+  0% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

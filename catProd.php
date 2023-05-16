@@ -25,12 +25,16 @@ if ($isEmpty) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="icon" href="img/mainImage.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/estilosCatProd.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <title>Categorias Productos</title>
 </head>
 
 <body class="container-fluid">
-    <header id="header" class="row d-flex">
+    <header id="header" class="row d-flex ">
         <div class="col-2 offset-1 h-100 d-flex justify-content-center align-items-center">
             <img src="img/mainImage.svg" alt="" class="h-100">
         </div>
@@ -111,11 +115,12 @@ if ($isEmpty) {
                     if ($cols == 0) {
                         ?>
                         <div class="row mb-5">
-                            <div class="col-1"></div>
+                            <div class="col-1 "></div>
                             <?php
                     }
                     ?>
-                        <div class="col-2 offset-1 munieca p-2" id="producto<?php echo $id; ?>">
+                        <div class="col-2 offset-1 munieca p-2" id="producto<?php echo $id; ?>"
+                            onclick="enviarFormulario('<?php echo $id; ?>')">
                             <div>
                                 <p class="">
                                     <?= $producto['nombre'] ?>
@@ -156,8 +161,11 @@ if ($isEmpty) {
             }
             ?>
         </div>
-
+        <form id="myForm" action="index.php" method="POST">
+            <input type="hidden" id="divIdInput" name="divId">
+        </form>
     </main>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -170,6 +178,7 @@ if ($isEmpty) {
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/estilosCatProd.css">
+    <script src="js/scriptsCatProd.js"></script>
 </body>
 
 </html>
