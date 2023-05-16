@@ -6,8 +6,10 @@ $datos;
 $cols = 0;
 $id = 0;
 $existencia = -1;
-
-$busca = $_POST['busca'];
+$busca;
+if (isset($_POST['busca'])) {
+    $busca = $_POST['busca'];
+}
 $isEmpty = empty($busca);
 if ($isEmpty) {
     $datos = $consultas->lista("SELECT * from producto order by nombre");
