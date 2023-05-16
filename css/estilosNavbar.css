@@ -1,0 +1,27 @@
+.bordeasd {
+  border: solid red 3px;
+}
+.bordeasd2 {
+  border: solid purple 3px;
+}
+.bordeasd3 {
+  border: solid green 3px;
+}
+* {
+  box-sizing: border-box;
+}
+#header {
+  height: 26vh;
+  background-color: #e8bba8;
+}
+#tituloPgina {
+  text-align: center;
+  font-size: clamp(1px, 10vh, 10vh);
+}
+#navBar {
+  background-color: #d9d9d9;
+}
+#menuDesplegable {
+  background-color: #d9d9d9;
+  border: solid black 1px;
+}
