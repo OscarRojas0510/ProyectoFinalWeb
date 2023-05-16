@@ -1,10 +1,20 @@
 <?php
 require 'consultas.php';
 $consultas = new Consultas();
-$datos = $consultas->lista("SELECT * from producto");
+$datos;
+
 $cols = 0;
 $id = 0;
 $existencia = -1;
+
+$busca = $_POST['busca'];
+$isEmpty = empty($busca);
+if ($isEmpty) {
+    $datos = $consultas->lista("SELECT * from producto order by nombre");
+} else {
+    $datos = $consultas->lista("SELECT * from producto where nombre LIKE '%$busca%' order by nombre");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -27,6 +37,7 @@ $existencia = -1;
         <div class="col-8 p-0 d-flex align-items-center">
             <p class="w-100 m-0 text-left font-weight-bold" id="tituloPgina">
                 Catálogo de Productos
+
             </p>
         </div>
     </header>
@@ -42,7 +53,9 @@ $existencia = -1;
                     <a class="nav-link" href="#">Iniciar Sesión</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Registro</a>
+                    <a class="nav-link" href="#">
+                        Registro
+                    </a>
                 </li>
                 <li class="d-flex">
                     <img src="img/carrito.png" class="align-self-center" alt="">
@@ -61,16 +74,29 @@ $existencia = -1;
     <section class="row d-flex flex-row align-items-center align-content-center p-0" id="section1">
         <div class="col-2 offset-1  align-self-stretch d-flex flex-row justify-content-start p-0">
             <p class=" align-self-center m-0 font-weight-bold">
-                Todos los productos :
+                <?php
+                if ($isEmpty) {
+                    ?>
+                    Todos los productos:
+                    <?php
+                } else {
+                    ?>
+                    Coincidencias para &quot;
+                    <?= $busca ?>&quot;
+                    <?php
+                }
+                ?>
+
             </p>
         </div>
         <div class="col-5 align-self-stretch d-flex flex-row align-items-center p-0">
-            <form class="form-inline m-0">
+            <form class="form-inline m-0" action="catProd.php" method="POST">
                 <button type="submit" class="btn">
                     <img src="img/search.png" alt="">
                 </button>
                 <div class="form-group mx-sm-3">
-                    <input type="text" class="form-control" id="inputBusca" placeholder="Buscar por nombre">
+                    <input name="busca" type="text" class="form-control" id="inputBusca"
+                        placeholder="Buscar por nombre">
                 </div>
             </form>
         </div>
@@ -89,7 +115,7 @@ $existencia = -1;
                             <?php
                     }
                     ?>
-                        <div class="col-2 offset-1 munieca p-2">
+                        <div class="col-2 offset-1 munieca p-2" id="producto<?php echo $id; ?>">
                             <div>
                                 <p class="">
                                     <?= $producto['nombre'] ?>
