@@ -1,5 +1,6 @@
 <?php
 include "Config.php";
+include "includes/header.php";
 $articulo = $_GET["articulo"];
 $productos = $db->query("SELECT * FROM producto WHERE id_producto =".$articulo);
  while ($producto = $productos->fetch_assoc()) {
@@ -14,6 +15,17 @@ $productos = $db->query("SELECT * FROM producto WHERE id_producto =".$articulo);
         break;
     }
 
+ }
+ if(isset($_GET["pago"])){
+    if($_GET["pago"]=='true'){
+        echo '<div class="alert alert-success" role="alert">
+        Gracias por tu compra, tu pago se realizo con éxito.
+        </div>';
+    }else{
+       echo' <div class="alert alert-danger" role="alert">
+ Lo sentimos, tu pago no fue procesado.
+</div>';
+    }
  }
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -42,7 +54,7 @@ $productos = $db->query("SELECT * FROM producto WHERE id_producto =".$articulo);
                     <button class="btn btn-black btn-rounded mr-1" style="background-color:#FCD6EF"; data-toggle="tooltip" title="Agregar al carrito" data-original-title="Agregar al carrito">
                       Agregar al carrito <i class="fa fa-shopping-cart"></i>
                     </button>
-                    <button class="btn btn-black btn-rounded" style="background-color:#FB96F7";>Comprar ahora</button>
+                    <a href="Pago.php?precio=<?php echo $precio ?>&articulo=<?php echo $articulo ?>"><button class="btn btn-black btn-rounded" style="background-color:#FB96F7";>Comprar ahora</button></a>
                     <h3 class="box-title mt-5">Con nosotros tu compra:</h3>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-check text-success"></i>Es segura.</li>
