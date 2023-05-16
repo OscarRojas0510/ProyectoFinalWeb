@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 $id = $_POST['divId'];
 ?>
 <!DOCTYPE html>
@@ -20,3 +21,13 @@ $id = $_POST['divId'];
 </body>
 
 </html>
+=======
+require_once 'includes/header.php';
+?>
+
+<script src="./resources/validacion.js">
+</script>  
+<?php
+include 'includes/footer.php';
+?>
+>>>>>>> branchpedro
