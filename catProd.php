@@ -113,7 +113,6 @@ $existencia = -1;
                             </div>
                             <div>
                                 <p class="">
-                                    $
                                     <?= $producto['precio'] ?>
                                 </p>
                             </div>
