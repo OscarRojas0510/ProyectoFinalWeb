@@ -139,7 +139,8 @@ if ($isEmpty) {
                             </div>
                             <div>
                                 <p class="">
-                                    <?= $producto['precio'] ?>
+                                    $
+                                    <?= $producto['precio'] ?>.00 MXN
                                 </p>
                             </div>
                         </div>
