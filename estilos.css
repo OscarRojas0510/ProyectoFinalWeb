@@ -1,0 +1,45 @@
+.bordeasd {
+  border: solid red 3px;
+}
+.bordeasd2 {
+  border: solid purple 3px;
+}
+.bordeasd3 {
+  border: solid green 3px;
+}
+* {
+  box-sizing: border-box;
+}
+#header {
+  height: 26vh;
+  background-color: #e8bba8;
+}
+#tituloPgina {
+  text-align: center;
+  font-size: clamp(1px, 10vh, 10vh);
+}
+#navBar {
+  background-color: #d9d9d9;
+}
+#menuDesplegable {
+  background-color: #d9d9d9;
+  border: solid black 1px;
+}
+#inputBusca {
+  background-color: #d9d9d9;
+  border-radius: 19px;
+  color: black;
+}
+#inputBusca::placeholder {
+  color: #949292;
+}
+.munieca {
+  background-color: #d9d9d9;
+  height: 45vh;
+  border-radius: 15px;
+}
+.imagenMunieca {
+  width: 100%;
+  height: 60%;
+  background-color: white;
+}
