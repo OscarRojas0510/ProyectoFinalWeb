@@ -1,0 +1,20 @@
+.item-nav:hover {
+  background-color: rgb(255, 75, 174);
+}
+.modal-login {
+  background-color: rgb(252, 144, 252);
+}
+.modal-body {
+  background-color: rgb(252, 144, 252);
+}
+.modal-body2 {
+  background-color: rgb(255, 177, 238);
+}
+.modal-title {
+  background-color: rgb(255, 109, 189);
+  text-align: center;
+}
+body{
+  background-color: rgb(248, 110, 218);
+}
+
