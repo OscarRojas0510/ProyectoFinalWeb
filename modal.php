@@ -22,7 +22,7 @@
 							<li class="list-group-item d-flex justify-content-between lh-condensed">
 								<div class="row col-12" >
 									<div class="col-6 p-0" style="text-align: left; color: #000000;"><h6 class="my-0">Cantidad: <?php echo $carrito_mio[$i]['cantidad'] ?> : <?php echo $carrito_mio[$i]['nombre'];?></h6>
-									</div>
+								</div>
 									<div class="col-6 p-0"  style="text-align: right; color: #000000;" >
 									<span class="text-muted"  style="text-align: right; color: #000000;">$ <?php echo $carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad'];    ?> </span>
 									</div>
@@ -61,9 +61,8 @@
      
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         <a type="button" class="btn btn-primary" href="borrarcarro.php">Vaciar carrito</a>
-        <a type="button" class="btn btn-success" href="otroindex.php">Ver detalles del carrito</a>
+        <a type="button" class="btn btn-success" href="ver_carro.php">Ver detalles del carrito</a>
       </div>
     </div>
   </div>
 </div>
-<!-- END MODAL CARRITO -->

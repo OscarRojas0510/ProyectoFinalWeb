@@ -173,4 +173,3 @@ inputs.forEach((input) => {
     input.addEventListener("keyup", validarF);
 });
 
-

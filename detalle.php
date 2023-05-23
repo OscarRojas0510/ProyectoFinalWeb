@@ -1,5 +1,6 @@
 <?php session_start();
 include "Config.php";
+
 $articulo = $_GET["articulo"];
 $productos = $db->query("SELECT * FROM producto WHERE id_producto =".$articulo);
  while ($producto = $productos->fetch_assoc()) {
@@ -49,6 +50,7 @@ $productos = $db->query("SELECT * FROM producto WHERE id_producto =".$articulo);
 
 
 <style>
+    body{background-color: #feebed;}
 .container_card{    margin: 0 auto;    padding:  0px 20px 20px 20px;    display: grid;    /* width: 800px; */    grid-template-columns: 1fr 1fr ;   grid-gap:1em;        /* grid-row-gap: 60px; */}
 .blog-post{    position: relative;    margin-bottom: 15px;    margin: 30px;}
 .blog-post img{    width: 100%;    height: 450px;    object-fit: cover;    border-radius: 10px;    }
@@ -71,7 +73,7 @@ include("navbar.php");
 include("modal.php");
 
 ?>
-
+<br>
 <div class="container">
     <div class="card">
         <div class="card-body">
@@ -80,7 +82,7 @@ include("modal.php");
 <br>
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-6">
-                    <div class="white-box text-center shadow p-3 mb-5 bg-white rounded"><img height="430" width="430" src="././img/<?php echo $imagen ?>" class="img-responsive"></div>
+                    <div class="white-box text-center shadow p-3 mb-5 bg-white rounded"><img height="350" width="350" src="/Unidad5/resources/img/<?php echo $imagen ?>" class="img-responsive"></div>
                 </div>
                 <div class="col-lg-7 col-md-7 col-sm-6">
                    
@@ -88,8 +90,7 @@ include("modal.php");
                     <p><?php echo $descripcion ?></p>
                     <h5>Disponibles: <?php echo $existencia ?> pzs</h5>
                     <h2 class="mt-5">
-                        $<?php echo $precio ?>
-                        <br>
+                        $<?php echo $precio ?><br>
                         <br>
                         <br>
                     </h2>
@@ -108,12 +109,6 @@ include("modal.php");
                                 </div>
                         </div>
                     </form>
-                    <h3 class="box-title mt-5">Con nosotros tu compra:</h3>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-check text-success"></i>Es segura.</li>
-                        <li><i class="fa fa-check text-success"></i>Tiene los mejores precios.</li>
-                        <li><i class="fa fa-check text-success"></i>Tienes envío gratis.</li>
-                    </ul>
                 </div>
                 
             </div>
